@@ -1,0 +1,29 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;    
+  }  
+    
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card-wrapper {
+    width: calc(100% - 20px); 
+    float: left;
+  }
+  
+  .last-in-row {
+    width: 100%;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+  }
+  .centered-and-resized {
+    max-width: 80%; 
+    max-height: 80%; 
+  }

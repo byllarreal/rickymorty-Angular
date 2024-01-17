@@ -1,10 +1,35 @@
-<div>
-    <ul>
-        @for (i of data.results; track $index) {
-            <li>                
-                {{i.name}}
-            </li>
-          }
-        
-    </ul>
-</div>
+<mat-card>
+    <mat-card-content>
+        <div class="image-container">
+            <img src="../../assets/Rick_and_Morty.svg" class="centered-and-resized">
+        </div>
+    </mat-card-content>
+  </mat-card>
+  <br>
+
+
+    <div class="card-container">  
+        @for (i of data.results; track $index) {        
+                <div class="card-wrapper" [ngClass]="{'last-in-row':($index+1)%3===0}" >
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                        <mat-card-title-group>
+                            <mat-card-title>{{i.name}}</mat-card-title>
+                            <mat-card-subtitle>Creado: {{i.created}}</mat-card-subtitle>
+                            <mat-card-subtitle>Especie: {{i.species}}</mat-card-subtitle>
+                            <mat-card-subtitle>Genero: {{i.gender}}</mat-card-subtitle>
+                            <mat-card-subtitle>Status: {{i.status}}</mat-card-subtitle>
+                            <mat-card-subtitle>Origen: {{i.origin.name}}</mat-card-subtitle>            
+                            <img mat-card-xl-image [src]="i.image" >
+                        </mat-card-title-group>
+                        </mat-card-header>
+                        <mat-card-content>          
+                        </mat-card-content>
+                    </mat-card>
+                </div>            
+        }
+    </div>
+
+
+
+
