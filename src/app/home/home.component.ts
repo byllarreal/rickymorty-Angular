@@ -11,13 +11,13 @@ import {ApiService} from '../service/api.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{  
-  constructor(private servicio:ApiService){}
-  data:[]=[];
+  data:any;
+  constructor(private servicio:ApiService){}  
   ngOnInit(): void {
     this.servicio.getData().subscribe(
-      (resultData) => {
-        this.data=resultData;
-        console.log(this.data);
+      (data) => {
+        this.data=data;
+        console.log(data);
       }
     );
   }
